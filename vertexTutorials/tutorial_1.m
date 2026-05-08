@@ -9,9 +9,15 @@
 % less flexible than other neural simulators (e.g. NEURON, NEST, Brian,
 % GENESIS, Moose), but the limited scope has allowed us to simplify the
 % user interface so that a simulation can be specified simply by setting
-% some parameters and run using a few function calls. The parameters are
-% divided into five categories: neuron group properties, connectivity &
-% synapses, tissue properties, recording settings, and simulation settings.
+% some parameters and run using a few function calls. 
+
+% The parameters are divided into five categories: 
+% 1) neuron group properties
+% 2) connectivity & synapses
+% 3) tissue properties
+% 4) recording settings
+% 5) simulation settings
+
 % The parameters associated with each category are specified in Matlab
 % structures or structure arrays.
 %
