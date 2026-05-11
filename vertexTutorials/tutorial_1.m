@@ -30,7 +30,7 @@
 % can run the vertexFunctions() function, which prints all available
 % functions with a brief description of what they do:
 
-vertexFunctions
+% vertexFunctions
 
 %%
 % To get more in-depth help on a function, type help and then the function
@@ -545,6 +545,6 @@ ylabel('Membrane potential (mV)', 'FontSize', 16)
 % mammalian cortical tissue, Brain Structure and Function.
 % doi:10.1007/s00429-014-0793-x
 %
-% Pettersen KH, Lindén H, Dale AM, Einevoll GT (2012) Extracellular spikes
+% Pettersen KH, Lindï¿½n H, Dale AM, Einevoll GT (2012) Extracellular spikes
 % and current-source density. In: Brette R, Destexhe A (eds) Handbook of
 % Neural Activity Measurement. Cambridge University Press
