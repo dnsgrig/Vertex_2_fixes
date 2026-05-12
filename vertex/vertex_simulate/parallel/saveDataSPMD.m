@@ -5,5 +5,6 @@ function saveDataSPMD(fileDir, fileName, data)
   end
   outPath = sprintf('%s%s', fileDir, fileName);
   psave(outPath, 'data','-v7.3');
+  %dsave(outPath, 'data');
   
 end

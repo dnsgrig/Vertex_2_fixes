@@ -321,7 +321,7 @@ for iSaves = 1:numSaves
                         sampleCount+1:sampleCount+size(ir, 2)) = ir;
                     
                     intraID = find(SS.neuronInLab(v_m) == iLab);
-                    intraIDmap(intraCount+1:intraCount+size(intraID)) = intraID;
+                    intraIDmap(intraCount+1:intraCount+numel(intraID)) = intraID;
                     intraCount = intraCount+size(ir,1);
                 end
             else
@@ -339,7 +339,7 @@ for iSaves = 1:numSaves
                             squeeze(i_Syn(:,iGroup,:));
                     end
                     I_synID = find(SS.neuronInLab(I_syn) == iLab);
-                    I_synIDmap(I_synCount+1:I_synCount+size(I_synID)) = I_synID;
+                    I_synIDmap(I_synCount+1:I_synCount+numel(I_synID)) = I_synID;
                     I_synCount = I_synCount+size(i_Syn,1);
                 end
             else
@@ -364,7 +364,7 @@ for iSaves = 1:numSaves
                     end
                     
                     stp_synID = find(SS.neuronInLab(stp_syn) == iLab);
-                    stp_synIDmap(stp_synCount+1:stp_synCount+size(stp_synID)) = stp_synID;
+                    stp_synIDmap(stp_synCount+1:stp_synCount+numel(stp_synID)) = stp_synID;
                     stp_synCount = stp_synCount+size(stp_Syn{1},1);
                 end
             else
@@ -388,8 +388,8 @@ for iSaves = 1:numSaves
                     end
                     
                     stdpvarsID = find(SS.neuronInLab(stdpvars) == iLab);
-                    stdpvarsIDmap(stdpvarsCount+1:stdpvarsCount+size(stdpvarsID)) = stdpvarsID;
-                    stdpvarsCount = stdpvarsCount+size(stdpvarsID);
+                    stdpvarsIDmap(stdpvarsCount+1:stdpvarsCount+numel(stdpvarsID)) = stdpvarsID;
+                    stdpvarsCount = stdpvarsCount+numel(stdpvarsID);
                 end
             else
                 stdpVars = RecordingVars.stdpvarsRecording;
@@ -457,7 +457,7 @@ for iSaves = 1:numSaves
             for i = 1:length(RS.I_synComp_groups)
                 iGroup = RS.I_synComp_groups(i);
                 I_synCompID = find(SS.neuronInLab(RS.I_synComp_NeuronIDs{i}) == iLab);
-                I_synCompIDMap{i}(I_synCompCount{i}+1:I_synCompCount{i}+size(I_synCompID)) = I_synCompID;
+                I_synCompIDMap{i}(I_synCompCount{i}+1:I_synCompCount{i}+numel(I_synCompID)) = I_synCompID;
                 I_synComp{i}(I_synCompCount{i}+1:I_synCompCount{i}+size(I_synCompCurrent{iGroup},1), 1:NP(iGroup).numCompartments,sampleCount+1:sampleCount+size(I_synCompCurrent{iGroup},3)) = I_synCompCurrent{iGroup};
                 I_synCompCount{i} = I_synCompCount{i}+size(I_synCompCurrent{iGroup},1);
             end
@@ -471,7 +471,7 @@ for iSaves = 1:numSaves
                         sampleCount+1:sampleCount+size(dv, 2)) = dv;
                     
                     DVID = find(SS.neuronInLab(RS.DV) == iLab);
-                    DVIDmap(DVCount+1:DVCount+size(DVID)) = DVID;
+                    DVIDmap(DVCount+1:DVCount+numel(DVID)) = DVID;
                     DVCount = DVCount+size(dv,1);
                 end
             else
@@ -483,7 +483,8 @@ for iSaves = 1:numSaves
             csd = RecordingVars.CSDRecording;
             for iGroup = 1:TP.numGroups
                 CSDID = find(SS.neuronInLab(RS.CSD_NeuronIDs{iGroup}) == iLab);
-                CSDIDMap{iGroup}(csdCount{iGroup}+1:csdCount{iGroup}+size(CSDID)) = CSDID;
+                CSDIDMap{iGroup}(csdCount{iGroup}+1:csdCount{iGroup}+numel(CSDID)) = CSDID;
+                %CSDIDMap{iGroup}(csdCount{iGroup}+1:csdCount{iGroup}+size(CSDID)) = CSDID;
                 CSD{iGroup}(csdCount{iGroup}+1:csdCount{iGroup}+size(csd{iGroup},1), 1:NP(iGroup).numCompartments,sampleCount+1:sampleCount+size(csd{iGroup},3)) = csd{iGroup};
                 csdCount{iGroup} = csdCount{iGroup}+size(csd{iGroup},1);
             end
